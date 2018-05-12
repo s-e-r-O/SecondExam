@@ -17,9 +17,7 @@
     "jasmine": "^3.1.0"
   },
   "devDependencies": {
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-jasmine": "^1.2.0",
-    "grunt-contrib-watch": "^1.0.0"
+    "grunt-contrib-jasmine": "^1.2.0"
   },
   "bugs": {
     "url": "https://github.com/s-e-r-O/SecondExam/issues"
