@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { AppRoutingModule, routingComponents } from './/app-routing.module';
+import { AppRoutingModule, RoutingComponents } from './app-routing.module';
+import { FreeContentComponent } from './free-content/free-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents,
+    RoutingComponents,
+    FreeContentComponent
   ],
   imports: [
     BrowserModule,
