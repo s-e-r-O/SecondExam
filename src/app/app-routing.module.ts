@@ -9,4 +9,4 @@ const routes: Routes = [{path: 'menu', component: MenuComponent}];
   exports: [ RouterModule ]	
 })
 export class AppRoutingModule { }
-export const routingComponents = [MenuComponent]
+export const RoutingComponents = [MenuComponent]
