@@ -6,10 +6,11 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './free-content.component.html',
   styleUrls: ['./free-content.component.css']
 })
+
 export class FreeContentComponent{
 
-  const title : string = data.freeContent.title;
-  const content : string = data.freeContent.body;
+  readonly title : string = (<any>data).freeContent.title;
+  readonly content : string = (<any>data).freeContent.body;
 
   constructor(title:Title)
   {
