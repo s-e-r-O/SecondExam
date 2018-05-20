@@ -3,10 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent }      from './app.component';
 import { MenuComponent } from './menu/menu.component';
 
-const routes: Routes = [{path: 'menu', component: MenuComponent}];
+const routes: Routes = [{path: '', component: MenuComponent}];
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ]	
 })
 export class AppRoutingModule { }
-export const routingComponents = [MenuComponent]
+export const RoutingComponents = [MenuComponent]
