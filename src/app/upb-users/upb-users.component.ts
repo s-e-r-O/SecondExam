@@ -9,7 +9,7 @@ import data from '../../../data.json';
 export class UpbUsersComponent implements OnInit 
 {
   users = [];
-
+  
   constructor() { }
 
   ngOnInit() {
