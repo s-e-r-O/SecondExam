@@ -12,7 +12,7 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="upb">UPB Users</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="pageTwoEnabled" class="nav-item">
           <a class="nav-link" routerLink="free">Free Content</a>
         </li>
       </ul>
