@@ -5,6 +5,7 @@ import { AppRoutingModule, RoutingComponents } from './app-routing.module';
 import { MenuComponent } from './menu/menu.component';
 import { FreeContentComponent } from './free-content/free-content.component';
 import { UpbUsersComponent } from './upb-users/upb-users.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { UpbUsersComponent } from './upb-users/upb-users.component';
     RoutingComponents,
     MenuComponent,
     FreeContentComponent,
-    UpbUsersComponent
+    UpbUsersComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
