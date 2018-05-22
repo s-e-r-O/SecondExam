@@ -39,6 +39,7 @@ module.exports = function(grunt) {
 					});
 			}
 		});
+		grunt.file.copy(config.buildFolder+'/index.html', 'src/index.html');
 	});
 	
 	grunt.registerTask('generateMenu', function() {
@@ -53,6 +54,24 @@ module.exports = function(grunt) {
 					});
 			}
 		});
+		grunt.file.copy(config.buildFolder+'/menu.component.html', 'src/app/menu/menu.component.html');
+		grunt.file.copy(config.buildFolder+'/menu.component.ts', 'src/app/menu/menu.component.ts');
+	});
+
+	grunt.registerTask('generateHome', function() {
+		grunt.file.copy('./templates/home.component.html', config.buildFolder+'/home.component.html');
+
+		grunt.file.copy('./templates/home.component.ts', config.buildFolder+'/home.component.ts', {
+			process: function(files) {	
+					return grunt.template.process(files, {
+							data: {
+								configFileName: configFile
+							}
+					});
+			}
+		});
+		grunt.file.copy(config.buildFolder+'/home.component.html', 'src/app/home/home.component.html');
+		grunt.file.copy(config.buildFolder+'/home.component.ts', 'src/app/home/home.component.ts');
 	});
 
 	grunt.registerTask('generateUpbUsers', function() {
@@ -73,11 +92,16 @@ module.exports = function(grunt) {
 					return grunt.template.process(files, {
 							data: {
 								dataFileName: dataFile,
+								configFileName: configFile,
 								pageOneName: config.pageOneName + '.html'
 							}
 					});
 			}
 		});
+		grunt.file.copy(config.buildFolder+'/'+config.pageOneName+'.html', 
+										'src/app/upb-users/'+config.pageOneName+'.html');
+		grunt.file.copy(config.buildFolder+'/upb-users.component.ts', 
+										'src/app/upb-users/upb-users.component.ts');
 	});
 	
 	grunt.registerTask('generateFreePage', function() {
@@ -95,10 +119,15 @@ module.exports = function(grunt) {
 					});
 			}
 		});
+		grunt.file.copy(config.buildFolder+'/'+config.pageTwoName+'.html', 
+										'src/app/free-content/'+config.pageTwoName+'.html');
+		grunt.file.copy(config.buildFolder+'/free-content.component.ts', 
+										'src/app/free-content/free-content.component.ts');
 	});
 	grunt.registerTask('build', [
 															'generateIndex',
-															'generateMenu', 
+															'generateMenu',
+															'generateHome', 
 															'generateUpbUsers',
 															'generateFreePage', 
 															'jasmine'

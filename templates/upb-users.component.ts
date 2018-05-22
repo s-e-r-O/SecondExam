@@ -1,19 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser'; 
 import data from '../../../<%= dataFileName %>';
+import config from '../../../<%= configFileName %>';
 
 @Component({
   selector: 'app-upb-users',
-  templateUrl: './<%= pageOneName %>',
-  styleUrls: ['./upb-users.component.css']
+  templateUrl: './<%= pageOneName %>'
 })
 export class UpbUsersComponent implements OnInit 
 {
-  users = [];
+  readonly users = (<any>data).users;
+  readonly title : string = (<any>config).appName;
   
-  constructor() { }
-
-  ngOnInit() {
-    this.users = data.users;
+  constructor(title:Title)
+  {
+  	title.setTitle(this.title); 
   }
+
+  ngOnInit() {  }
 
 }

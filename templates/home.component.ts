@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser'; 
-import * as config from '../../../config.json';
+import * as config from '../../../<%= configFileName %>';
 
 @Component({
   selector: 'app-home',

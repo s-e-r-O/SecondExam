@@ -3,8 +3,7 @@ import * as data from '../../../config.json';
 import { Title } from '@angular/platform-browser'; 
 @Component({
   selector: 'app-free-content',
-  templateUrl: './free-content.component.html',
-  styleUrls: ['./free-content.component.css']
+  templateUrl: './pageTwo.html'
 })
 
 export class FreeContentComponent{
@@ -17,4 +16,4 @@ export class FreeContentComponent{
   	title.setTitle(this.title); 
   }
 
-}
+} 

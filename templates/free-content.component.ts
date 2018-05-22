@@ -3,8 +3,7 @@ import * as data from '../../../<%= configFileName %>';
 import { Title } from '@angular/platform-browser'; 
 @Component({
   selector: 'app-free-content',
-  templateUrl: './<%= pageTwoName %>',
-  styleUrls: ['./free-content.component.css']
+  templateUrl: './<%= pageTwoName %>'
 })
 
 export class FreeContentComponent{
