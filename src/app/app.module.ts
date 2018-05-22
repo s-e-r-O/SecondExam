@@ -4,13 +4,15 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule, RoutingComponents } from './app-routing.module';
 import { MenuComponent } from './menu/menu.component';
 import { FreeContentComponent } from './free-content/free-content.component';
+import { UpbUsersComponent } from './upb-users/upb-users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RoutingComponents,
     MenuComponent,
-    FreeContentComponent
+    FreeContentComponent,
+    UpbUsersComponent
   ],
   imports: [
     BrowserModule,

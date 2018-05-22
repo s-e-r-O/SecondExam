@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="card mb-3" *ngFor="let user of users">
+        <h3 class="card-header">{{user.name}}</h3>
+        <div class="card-body">
+          <h5 class="card-title">{{user.nickName}}</h5>
+        </div>
+        <div class="container-fluid text-center" style="margin-top:1%; margin-bottom:2%">
+            <img *ngIf="!user.avatar_url" style="height: 100px; width: 100px" src="http://www.eurogeosurveys.org/wp-content/uploads/2014/02/default_profile_pic.jpg" alt="Card image"> 
+            <img *ngIf="user.avatar_url" style="height: 100px; width: 100px" src="{{user.avatar_url}}" alt="Card image"> 
+        </div>
+        <div class="card-body">
+          <span>GIT HUB URL: </span><a href="{{user.github_url}}" class="card-link">{{user.github_url}}</a>
+        </div>
+        <div class="card-footer text-muted">
+         <p>UPB - GIT @ 2018</p>
+        </div>
+      </div>
+</div>
+
+
+
