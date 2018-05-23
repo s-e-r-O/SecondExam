@@ -1,0 +1,11 @@
+{
+	"buildFolder":"website",
+	"appName": "Final Test",
+	"pageOneName": "page-one",
+	"pageTwoName": "page-two",
+	"enablePageTwoLink": false,
+	"freeContent": {
+		"title": "Free Content",
+		"body": "We learned CI!"
+	}
+}
