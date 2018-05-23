@@ -2546,7 +2546,7 @@
  }
  
  .btn:not(:disabled):not(.disabled):active, .btn:not(:disabled):not(.disabled).active {
-   background-image: none;
+   -image: none;
  }
  
  a.btn.disabled,
@@ -2845,7 +2845,7 @@
  .btn-outline-primary {
    color: #B58900;
    background-color: transparent;
-   background-image: none;
+   -image: none;
    border-color: #B58900;
  }
  
