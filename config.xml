@@ -60,7 +60,7 @@
       <nodeJSInstallationName>Node</nodeJSInstallationName>
     </jenkins.plugins.nodejs.NodeJSCommandInterpreter>
     <hudson.tasks.BatchFile>
-      <command>npm install &amp; grunt build --config=&quot;%CONFIG%&quot; --datafile=%DATAFILE%</command>
+      <command>npm install &amp; npm install -g @angular/cli &amp; grunt build --config=&quot;%CONFIG%&quot; --datafile=%DATAFILE%</command>
     </hudson.tasks.BatchFile>
   </builders>
   <publishers>
