@@ -7,22 +7,22 @@
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
         <hudson.model.StringParameterDefinition>
-          <name>BRANCH</name>
-          <description></description>
-          <defaultValue>CI-001</defaultValue>
-          <trim>false</trim>
-        </hudson.model.StringParameterDefinition>
-        <hudson.model.StringParameterDefinition>
           <name>CONFIG</name>
           <description></description>
           <defaultValue>config.json</defaultValue>
-          <trim>false</trim>
+          <trim>true</trim>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
-          <name>DB</name>
+          <name>BRANCH</name>
+          <description></description>
+          <defaultValue>develop</defaultValue>
+          <trim>true</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>DATAFILE</name>
           <description></description>
           <defaultValue>data.json</defaultValue>
-          <trim>false</trim>
+          <trim>true</trim>
         </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
@@ -32,7 +32,7 @@
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
         <url>https://github.com/s-e-r-O/SecondExam.git</url>
-        <credentialsId>git-hub-s-e-r-O</credentialsId>
+        <credentialsId>github-veimar</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -48,20 +48,24 @@
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <triggers/>
+  <triggers>
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.29.0">
+      <spec></spec>
+    </com.cloudbees.jenkins.GitHubPushTrigger>
+  </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <jenkins.plugins.nodejs.NodeJSCommandInterpreter plugin="nodejs@1.2.6">
-      <command></command>
+      <command>console.log(&apos;installing node JS&apos;);</command>
       <nodeJSInstallationName>Node</nodeJSInstallationName>
     </jenkins.plugins.nodejs.NodeJSCommandInterpreter>
     <hudson.tasks.BatchFile>
-      <command>npm install &amp;&amp; grunt build --config=&quot;%CONFIG%&quot; &amp;&amp; echo &quot;%DB%&quot;</command>
+      <command>npm install &amp; grunt build --config=&quot;%CONFIG%&quot; --datafile=%DATAFILE%</command>
     </hudson.tasks.BatchFile>
   </builders>
   <publishers>
     <hudson.tasks.Mailer plugin="mailer@1.21">
-      <recipients>ser.test.certi@gmail.com</recipients>
+      <recipients>veimarchoquetest@gmail.com</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>false</sendToIndividuals>
     </hudson.tasks.Mailer>
