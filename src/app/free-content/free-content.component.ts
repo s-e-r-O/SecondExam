@@ -16,4 +16,4 @@ export class FreeContentComponent{
   	title.setTitle(this.title); 
   }
 
-} 
+}
